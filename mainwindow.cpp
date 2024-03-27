@@ -151,7 +151,7 @@ void MainWindow::on_createButton_clicked()
             scaffoldName = ui->scaffoldsEdit->text();
         }
 
-        if(!ui->scaffoldsEdit->text().isEmpty()) {
+        if(!scaffoldName.isEmpty()) {
            executeHexoCommand(QStringList()<< "new" << scaffoldName << ui->articleName->text());
         }else{
            executeHexoCommand(QStringList() << "new" << ui->articleName->text());
