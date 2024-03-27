@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Config</class>
+ <widget class="QWidget" name="Config">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>527</width>
+    <height>242</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>config</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>22</y>
+     <width>401</width>
+     <height>137</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLineEdit" name="hexoPathEdit"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="workingDirEdit"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="postPathEdit"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="scaffoldsPathEdit"/>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QLabel" name="hexoPathLabel">
+            <property name="text">
+             <string>hexoPath</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="workingDirLabel">
+            <property name="text">
+             <string>workingDir</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="postPathLabel">
+            <property name="text">
+             <string>postPath</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="scaffoldsPathLabel">
+            <property name="text">
+             <string>scaffoldsPath</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="saveButton">
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>save</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>close</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
