@@ -1,7 +1,7 @@
 # hexo-commander
 
 ## Environment
-[hexo](https://hexo.io/zh-cn/docs/configuration), [hexo-deployer-git](https://hexo.io/zh-cn/docs/one-command-deployment)
+[hexo](https://hexo.io/docs/configuration), [hexo-deployer-git](https://hexo.io/docs/one-command-deployment)
 
 
 ## Setting
