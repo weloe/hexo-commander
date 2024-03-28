@@ -20,7 +20,7 @@ scaffoldsPath: hexo scaffoldsPath
 
 ## Usage
 
-![image](https://github.com/weloe/hexo-commander/assets/87379877/38cbd3a1-03c2-409c-a6c5-242aea2372a6)
+![image](https://github.com/weloe/hexo-commander/assets/87379877/86316346-c73f-4026-98a0-c503578ab79c)
 
 [button] - [cmd]
 
