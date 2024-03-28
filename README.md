@@ -6,7 +6,7 @@
 
 ## Setting
 
-![image](https://github.com/weloe/hexo-commander/assets/87379877/5c02658d-1920-432a-acf7-1b7ad2657339)
+![image](https://github.com/weloe/hexo-commander/assets/87379877/15b273cc-ef21-4276-8e18-e4a76c288bfd)
 
 Configure the environment.
 
@@ -20,7 +20,7 @@ scaffoldsPath: hexo scaffoldsPath
 
 ## Usage
 
-![image](https://github.com/weloe/hexo-commander/assets/87379877/86316346-c73f-4026-98a0-c503578ab79c)
+![image](https://github.com/weloe/hexo-commander/assets/87379877/c09f2a84-1a89-4411-9803-07014b23bd69)
 
 [button] - [cmd]
 
