@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>649</width>
-    <height>442</height>
+    <width>730</width>
+    <height>492</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,10 +24,13 @@
     </item>
     <item row="0" column="1">
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
+      <item row="1" column="4">
+       <widget class="QComboBox" name="scaffoldsComboBox"/>
+      </item>
+      <item row="1" column="6">
+       <widget class="QPushButton" name="createButton">
         <property name="text">
-         <string>post</string>
+         <string>new</string>
         </property>
        </widget>
       </item>
@@ -38,13 +41,10 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="4">
-       <widget class="QComboBox" name="scaffoldsComboBox"/>
-      </item>
-      <item row="1" column="5">
-       <widget class="QPushButton" name="createButton">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
         <property name="text">
-         <string>new</string>
+         <string>article</string>
         </property>
        </widget>
       </item>
@@ -61,13 +61,49 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="4">
+      <item row="1" column="5">
        <widget class="QCheckBox" name="autoOpen">
         <property name="text">
          <string>open</string>
         </property>
         <property name="checked">
          <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="6">
+       <widget class="QPushButton" name="openPostButton">
+        <property name="text">
+         <string>open</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4" colspan="2">
+       <widget class="QComboBox" name="postComboBox"/>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="postClearButton">
+        <property name="maximumSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>X</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="scaffoldsClearButton">
+        <property name="maximumSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>X</string>
         </property>
        </widget>
       </item>
@@ -576,7 +612,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>649</width>
+     <width>730</width>
      <height>23</height>
     </rect>
    </property>

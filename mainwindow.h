@@ -23,7 +23,8 @@ public:
     void executeHexoCommand(const QString &command);
     void terminateProcessByPort(int portNumber);
     void loadComboBoxItems();
-    void loadComboBoxItems(const QString &folderPath);
+    void loadPostComboBoxItems();
+    void loadComboBoxItems(const QString &folderPath, QComboBox *box);
 private:
     Ui::MainWindow *ui;
 
@@ -42,6 +43,9 @@ private slots:
     void on_pushButton_clicked();
     void on_scaffoldsComboBox_activated(int index);
     void on_configButton_clicked();
+    void on_openPostButton_clicked();
+    void on_postClearButton_clicked();
+    void on_scaffoldsClearButton_clicked();
 };
 
 #endif // MAINWINDOW_H

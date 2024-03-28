@@ -28,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
         }
     });
     loadComboBoxItems();
+    loadPostComboBoxItems();
 
     QMenu *configMenu = menuBar()->addMenu("File");
 
@@ -50,23 +51,34 @@ void MainWindow::on_scaffoldsComboBox_activated(int index)
 
 void MainWindow::loadComboBoxItems()
 {
-    loadComboBoxItems(scaffoldsPath);
+    loadComboBoxItems(scaffoldsPath,ui->scaffoldsComboBox);
     ui->scaffoldsComboBox->setCurrentIndex(ui->scaffoldsComboBox->count() - 1);
+
+
 }
 
-void MainWindow::loadComboBoxItems(const QString &folderPath)
+void MainWindow::loadPostComboBoxItems()
 {
-    qDebug() << "loadComboBoxItems";
+    loadComboBoxItems(postPath,ui->postComboBox);
+    ui->postComboBox->setCurrentIndex(ui->scaffoldsComboBox->count() - 1);
+}
+
+void MainWindow::loadComboBoxItems(const QString &folderPath,QComboBox * box)
+{
+    if(folderPath.isEmpty()) {
+        return;
+    }
+    qDebug() << "load "+ box->objectName() +"ComboBoxItems";
     QDir directory(folderPath);
     QStringList files = directory.entryList(QStringList() << "*.md", QDir::Files);
 
-    ui->scaffoldsComboBox->clear(); // 清空下拉框中的选项
+    box->clear(); // 清空下拉框中的选项
 
     foreach(QString filename, files)
     {
         QFileInfo fileInfo(filename);
         QString nameWithoutExtension = fileInfo.baseName(); // 获取不带后缀的文件名
-        ui->scaffoldsComboBox->addItem(nameWithoutExtension); // 将不带后缀的文件名添加到下拉框中
+        box->addItem(nameWithoutExtension); // 将不带后缀的文件名添加到下拉框中
     }
 }
 
@@ -156,6 +168,7 @@ void MainWindow::on_createButton_clicked()
         }else{
            executeHexoCommand(QStringList() << "new" << ui->articleName->text());
         }
+
     }else{
         QString message = "Warn file [" + filePath + "] already exists.";
         ui->plainTextEdit->textCursor().insertHtml("\n<font color='red'>" + message + "</font>\n");
@@ -166,8 +179,35 @@ void MainWindow::on_createButton_clicked()
         process->waitForFinished();
         QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
     }
+    // 刷新post列表
+    loadComboBoxItems(postPath,ui->postComboBox);
 }
 
+
+void MainWindow::on_openPostButton_clicked()
+{
+    QDir dir(postPath);
+    QString articleName;
+    // 输入为空就按照选项打开
+    if(!ui->articleName->text().isEmpty()){
+        articleName = ui->articleName->text();
+    }else if(!ui->postComboBox->currentText().isEmpty()){
+        articleName = ui->postComboBox->currentText();
+    }else{
+        QMessageBox::warning(this, "Warning", "Article name cannot be empty.");
+        return;
+    }
+    QString fileName = articleName + ".md";
+
+    QString filePath = dir.filePath(fileName);
+
+    QFile file(filePath);
+    if(file.exists()){
+        QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
+    } else {
+        QMessageBox::warning(this, "Warning", "The article [" + filePath +"] does not exist.");
+    }
+}
 
 
 void MainWindow::executeHexoCommand(const QString &command)
@@ -224,4 +264,14 @@ void MainWindow::on_configButton_clicked()
 {
 
     configWidget->show();
+}
+
+void MainWindow::on_postClearButton_clicked()
+{
+    ui->articleName->clear();
+}
+
+void MainWindow::on_scaffoldsClearButton_clicked()
+{
+    ui->scaffoldsEdit->clear();
 }
