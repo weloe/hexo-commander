@@ -29,10 +29,14 @@ public:
     void check_save(const QString &text, const QString &value);
     bool check_config();
     QString getConfig(const QString &key);
+
+    QString searchForFile(const QString &path, const QString &fileName);
 private slots:
     void on_saveButton_clicked();
 
     void on_pushButton_clicked();
+
+    void on_hexoPathAutoButton_clicked();
 
 public:
     Ui::Config *ui;
