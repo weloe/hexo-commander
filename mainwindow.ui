@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>730</width>
-    <height>492</height>
+    <width>725</width>
+    <height>457</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,16 +24,6 @@
     </item>
     <item row="0" column="1">
      <layout class="QGridLayout" name="gridLayout">
-      <item row="1" column="4">
-       <widget class="QComboBox" name="scaffoldsComboBox"/>
-      </item>
-      <item row="1" column="6">
-       <widget class="QPushButton" name="createButton">
-        <property name="text">
-         <string>new</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
@@ -58,16 +48,6 @@
           <width>16777215</width>
           <height>16777215</height>
          </size>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="5">
-       <widget class="QCheckBox" name="autoOpen">
-        <property name="text">
-         <string>open</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -107,27 +87,60 @@
         </property>
        </widget>
       </item>
+      <item row="1" column="6">
+       <widget class="QPushButton" name="scaffoldsOpenButton">
+        <property name="text">
+         <string>open</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4" colspan="2">
+       <widget class="QComboBox" name="scaffoldsComboBox"/>
+      </item>
      </layout>
     </item>
     <item row="1" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="autoOpen">
+        <property name="text">
+         <string>open</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="createButton">
+        <property name="text">
+         <string>new</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="1">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="1">
-         <widget class="QPushButton" name="generateButton">
-          <property name="text">
-           <string>generate</string>
-          </property>
-         </widget>
+        <item row="1" column="5">
+         <layout class="QHBoxLayout" name="horizontalLayout"/>
         </item>
-        <item row="0" column="3">
-         <widget class="QPushButton" name="deployButton">
-          <property name="text">
-           <string>deploy</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2">
+        <item row="2" column="3">
          <widget class="QPushButton" name="serverButton">
           <property name="palette">
            <palette>
@@ -576,17 +589,38 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="4">
+        <item row="2" column="2">
+         <widget class="QPushButton" name="generateButton">
+          <property name="text">
+           <string>generate</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="4">
+         <widget class="QPushButton" name="deployButton">
+          <property name="text">
+           <string>deploy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="5">
          <widget class="QPushButton" name="cleandButton">
           <property name="text">
            <string>clean_deploy</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="0">
+        <item row="2" column="1">
          <widget class="QPushButton" name="cleanButton">
           <property name="text">
            <string>clean</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="hexoInitButton">
+          <property name="text">
+           <string>init</string>
           </property>
          </widget>
         </item>
@@ -612,7 +646,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>730</width>
+     <width>725</width>
      <height>23</height>
     </rect>
    </property>

@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QCoreApplication>
-#include <QWidget>
 #include <QtWidgets>
 #include <config.h>
 
@@ -46,6 +45,10 @@ private slots:
     void on_openPostButton_clicked();
     void on_postClearButton_clicked();
     void on_scaffoldsClearButton_clicked();
+    void on_scaffoldsOpenButton_clicked();
+    void on_hexoInitButton_clicked();
 };
+
+
 
 #endif // MAINWINDOW_H

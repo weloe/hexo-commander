@@ -1,11 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-
-// 在头文件 MainWindow.h 中添加必要的包含和成员变量
-#include <QThreadPool>
-#include <QFutureWatcher>
-#include <QtConcurrent/QtConcurrent>
+#include "util.h"
 #include "ui_config.h"
 #include "config.h"
 
@@ -209,6 +205,30 @@ void MainWindow::on_openPostButton_clicked()
     }
 }
 
+void MainWindow::on_scaffoldsOpenButton_clicked()
+{
+    QDir dir(scaffoldsPath);
+    QString scaffoldName;
+    // 输入为空就按照选项打开
+    if(!ui->scaffoldsEdit->text().isEmpty()){
+        scaffoldName = ui->articleName->text();
+    }else if(!ui->scaffoldsComboBox->currentText().isEmpty()){
+        scaffoldName = ui->scaffoldsComboBox->currentText();
+    }else{
+        QMessageBox::warning(this, "Warning", "scaffold name cannot be empty.");
+        return;
+    }
+    QString fileName = scaffoldName + ".md";
+
+    QString filePath = dir.filePath(fileName);
+
+    QFile file(filePath);
+    if(file.exists()){
+        QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
+    } else {
+        QMessageBox::warning(this, "Warning", "The scaffold [" + filePath +"] does not exist.");
+    }
+}
 
 void MainWindow::executeHexoCommand(const QString &command)
 {
@@ -274,4 +294,14 @@ void MainWindow::on_postClearButton_clicked()
 void MainWindow::on_scaffoldsClearButton_clicked()
 {
     ui->scaffoldsEdit->clear();
+}
+
+
+void MainWindow::on_hexoInitButton_clicked()
+{
+    if(!isDirEmpty(workingDir,this)) {
+        QMessageBox::warning(this, "Warning", "Working Directory ["+ workingDir +"] is not empty, please set an empty folder");
+        return;
+    }
+    executeHexoCommand("init");
 }
