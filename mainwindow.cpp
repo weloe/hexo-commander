@@ -167,7 +167,7 @@ void MainWindow::on_createButton_clicked()
 
     }else{
         QString message = "Warn file [" + filePath + "] already exists.";
-        ui->plainTextEdit->textCursor().insertHtml("\n<font color='red'>" + message + "</font>\n");
+        ui->plainTextEdit->textCursor().insertHtml("<font color='red'>" + message + "</font><br>");
     }
 
 
